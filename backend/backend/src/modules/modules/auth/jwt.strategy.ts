@@ -8,7 +8,6 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(configService: ConfigService) {
     const secret = configService.get<string>('JWT_SECRET'); // <-- Obtenemos la clave
 
-    // --- CORRECCIÓN ---
     // Lanzamos un error si la clave secreta no está definida en el .env
     if (!secret) {
       throw new Error('JWT_SECRET no está definido en el archivo .env');

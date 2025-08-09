@@ -21,7 +21,6 @@ export class Job {
   @Column('text')
   description: string;
 
-  // --- CORRECCIÓN: Se eliminó forwardRef() ---
   @ManyToOne(() => User, (user) => user.posted_jobs)
   @JoinColumn({ name: 'posted_by_id' })
   posted_by: User;

@@ -1,3 +1,7 @@
+# ‼️ ## Heads-up!
+
+This project is a functional prototype built to showcase the core AI interview flow. While it works as intended, it has not yet been refactored for optimal architecture, performance, or a polished UX.
+
 # 🤖 AI Video Interviewer
 
 This is a full-stack project that implements an AI-powered video interviewer. The application allows companies to post job openings and enables talent to conduct an initial automated technical screening through an interactive video call.

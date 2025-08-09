@@ -1,8 +1,3 @@
-// import { Injectable } from '@nestjs/common';
-
-// @Injectable()
-// export class JobsService {}
-
 import {
   Injectable,
   ConflictException,

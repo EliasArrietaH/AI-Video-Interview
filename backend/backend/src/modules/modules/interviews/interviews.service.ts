@@ -1,7 +1,3 @@
-// import { Injectable } from '@nestjs/common';
-
-// @Injectable()
-// export class InterviewsService {}
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Interview } from './entities/interview.entity';

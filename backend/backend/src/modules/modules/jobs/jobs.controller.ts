@@ -1,8 +1,3 @@
-// import { Controller } from '@nestjs/common';
-
-// @Controller('jobs')
-// export class JobsController {}
-
 import { Controller, Post, Get, Body, UseGuards, Req } from '@nestjs/common';
 import { JobsService } from './jobs.service';
 import { CreateSkillDto } from './dto/create-skill.dto';

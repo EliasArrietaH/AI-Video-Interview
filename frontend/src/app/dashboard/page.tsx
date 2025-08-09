@@ -1,83 +1,8 @@
-// "use client";
-// import { useAuth } from "@/context/AuthContext";
-// import { useRouter } from "next/navigation";
-// import { useEffect, useState } from "react";
-
-// // Define los tipos de datos
-// interface Skill {
-//   id: string;
-//   name: string;
-// }
-// interface Job {
-//   id: string;
-//   title: string;
-//   description: string;
-//   skills: Skill[];
-// }
-
-// export default function DashboardPage() {
-//   const { token, isAuthenticated, logout } = useAuth();
-//   const router = useRouter();
-//   const [jobs, setJobs] = useState<Job[]>([]);
-//   const [isLoading, setIsLoading] = useState(true);
-
-//   useEffect(() => {
-//     if (!isAuthenticated) {
-//       router.push("/login");
-//       return;
-//     }
-
-//     const fetchJobs = async () => {
-//       try {
-//         const response = await fetch("http://localhost:3001/jobs", {
-//           headers: { Authorization: `Bearer ${token}` },
-//         });
-//         const data = await response.json();
-//         setJobs(data);
-//       } catch (error) {
-//         console.error("Error fetching jobs:", error);
-//       } finally {
-//         setIsLoading(false);
-//       }
-//     };
-//     fetchJobs();
-//   }, [isAuthenticated, router, token]);
-
-//   const handleStartInterview = async (jobId: string) => {
-//     try {
-//       // Redirigimos directamente a la página de la entrevista
-//       // Pasando el ID del trabajo en la URL.
-//       router.push(`/interview/${jobId}`);
-//     } catch (error) {
-//       console.error("Error al iniciar la entrevista:", error);
-//     }
-//   };
-
-//   if (isLoading) return <p>Cargando...</p>;
-
-//   return (
-//     <div className="container mx-auto p-4">
-//       <button onClick={logout}>Cerrar Sesión</button>
-//       <h1 className="text-3xl font-bold">Ofertas Disponibles</h1>
-//       {/* ... (Renderiza la lista de trabajos con un botón "Iniciar Entrevista" para cada uno) ... */}
-//       {jobs.map((job) => (
-//         <div key={job.id} className="p-4 my-2 border rounded">
-//           <h2>{job.title}</h2>
-//           <p>{job.description}</p>
-//           <div>Habilidades: {job.skills.map((s) => s.name).join(", ")}</div>
-//           <button onClick={() => handleStartInterview(job.id)}>
-//             Iniciar Entrevista
-//           </button>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
 "use client";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useCallback } from "react";
-import CreateJobForm from "@/components/CreateJobForm"; // <-- Importa el nuevo componente
+import CreateJobForm from "@/components/CreateJobForm";
 
 // Define los tipos de datos
 interface Skill {
